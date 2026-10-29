@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "las-crs-doctor"
+version = "0.1.0"
+description = "Detect and fix CRS problems in LAS/LAZ point clouds (e.g. DJI Terra exports in degrees)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["laspy[lazrs]>=2.4", "pyproj>=3.3", "numpy"]
+
+[project.scripts]
+lascrs = "lascrs.cli:main"
+
+[project.gui-scripts]
+lascrs-gui = "lascrs.gui:main"
+
+[tool.setuptools]
+packages = ["lascrs"]
